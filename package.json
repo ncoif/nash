@@ -1,0 +1,19 @@
+{
+  "name": "nash",
+  "description": "Nodejs + Stash",
+  "version": "0.1.0",
+  "author": "ncoif <ncoif@gmx.com>",
+  "repository" : {
+      "type": "git",
+      "url": "https://github.com/ncoif/nash.git"
+  },
+  "dependencies" : {
+      "express": "latest",
+      "ejs": "latest",
+      "mongoose": "latest",
+      "passport": "latest",
+      "passport-local": "latest",
+      "connect-flash": "latest",
+      "bcrypt-nodejs": "latest"
+  }
+}
