@@ -1,0 +1,14 @@
+ul
+    li
+        a(href="/") Home
+
+    if (!user)
+        li
+            a(href="/login", title="Login") Login
+        li
+            a(href="/signup", title="Signup") Sign up
+    else
+        li
+            a(href="/profile", title="Profile") Profile
+        li
+            a(href="/logout", title="Logout") Logout

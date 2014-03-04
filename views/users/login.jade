@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block main
+    p Login
+
+    if (message.length > 0)
+        p= message
+
+    form(action="/login", method="post")
+        input(type='hidden', name='_csrf', value='#{csrf_token}')
+
+        input#email(type="email", placeholder="Email", name="email")
+        input#password(type="password", placeholder="Password", name="password")
+
+        button(type="submit") Log in
