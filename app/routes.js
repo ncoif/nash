@@ -4,12 +4,15 @@ module.exports = function(app, passport) {
 
 	// show the home page (will also have our login links)
 	app.get('/', function(req, res) {
-		res.render('index.jade');
+		res.render('index.jade', {
+            title: "Index"
+        });
 	});
 
 	// PROFILE SECTION =========================
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('users/profile.jade', {
+            title : "Profile",
 			user : req.user
 		});
 	});
@@ -24,7 +27,9 @@ module.exports = function(app, passport) {
     // LOGIN ===============================
     // show the login form
     app.get('/login', function(req, res) {
-        res.render('users/login.jade', { message: req.flash('loginMessage') });
+        res.render('users/login.jade', {
+            title : "Login",
+            message: req.flash('loginMessage') });
     });
 
     // process the login form
@@ -37,7 +42,10 @@ module.exports = function(app, passport) {
     // SIGNUP =================================
     // show the signup form
     app.get('/signup', function(req, res) {
-        res.render('users/signup.jade', { message: req.flash('signupMessage') });
+        res.render('users/signup.jade', {
+            title : "Sign up",
+            message: req.flash('signupMessage')
+        });
     });
 
     // process the signup form
