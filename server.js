@@ -9,7 +9,9 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
 
-var configDB = require('./config/database.js');
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config/config.js')[env];
+var configDB = require('./config/database.js')[env];
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database

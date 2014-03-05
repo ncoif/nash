@@ -1,4 +1,5 @@
-// config/database.js
 module.exports = {
-	'url' : 'mongodb://localhost/test' 
+    development: {
+        url : 'mongodb://localhost/test'
+    }
 };
