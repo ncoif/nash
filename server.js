@@ -19,6 +19,7 @@ mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // pass passport for configuration
 
 app.configure(function() {
+    app.use(express.static(config.root + '/public'));
 
 	// set up our express application
 	app.use(express.logger('dev')); // log every request to the console
