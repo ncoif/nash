@@ -1,14 +1,20 @@
-ul
-    li
-        a(href="/") Home
+.navbar.navbar-default.navbar-fixed-top(role='navigation')
+    .container
+        .navbar-header
+            a(href="/").navbar-brand nash
 
-    if (!user)
-        li
-            a(href="/login", title="Login") Login
-        li
-            a(href="/signup", title="Signup") Sign up
-    else
-        li
-            a(href="/profile", title="Profile") Profile
-        li
-            a(href="/logout", title="Logout") Logout
+        ul.nav.navbar-nav.navbar-right
+            if (!user)
+                li
+                    a(href="/login", title="Login")
+                        span.fa.fa-sign-in Login
+                li
+                    a(href="/signup", title="Signup")
+                        span.fa.fa-pencil Sign up
+            else
+                li
+                    a(href="/profile", title="Profile")
+                        span.fa.fa-user Profile
+                li
+                    a(href="/logout", title="Logout")
+                        span.fa.fa-sign-out Logout

@@ -1,15 +1,25 @@
 extends ../layouts/default
 
 block main
-    p Login
+    .container
+        .row
+            .col-md-4.col-lg-offset-4
+                h1 Login
 
-    if (message.length > 0)
-        p= message
+        if (message.length > 0)
+            p= message
 
-    form(action="/login", method="post")
-        input(type='hidden', name='_csrf', value='#{csrf_token}')
+        form(action="/login", method="post")
+            input(type='hidden', name='_csrf', value='#{csrf_token}')
+            .row
+                .col-md-4.col-lg-offset-4
+                    .form-group
+                        input#email.form-control(type="email", placeholder="Email", name="email")
 
-        input#email(type="email", placeholder="Email", name="email")
-        input#password(type="password", placeholder="Password", name="password")
-
-        button(type="submit") Log in
+            .row
+                .col-md-4.col-lg-offset-4
+                    .form-group
+                        input#password.form-control(type="password", placeholder="Password", name="password")
+            .row
+                .col-md-4.col-lg-offset-4
+                    button.btn.btn-block.btn-primary(type="submit") Log in
