@@ -8,7 +8,7 @@
       "url": "https://github.com/ncoif/nash.git"
   },
   "dependencies" : {
-      "express": "latest",
+      "express": "3.x",
       "jade": "latest",
       "ejs": "latest",
       "mongoose": "latest",
