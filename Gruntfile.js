@@ -1,17 +1,25 @@
-
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        jsbeautifier: {
+            files: ['package.json', '*.js', 'app/**/*.js', 'config/**/*.js', 'app/**/*.jade'],
+            options: {
+                js: {
+                    jslintHappy: true
+                }
+            }
+        },
         jshint: {
-            all: ['*.js', 'app/**/*.js', '!public/lib/**/*.js']
+            all: ['*.js', 'app/**/*.js', 'config/**/*.js', '!public/lib/**/*.js']
         }
     });
 
-    // Load the plugin that provides the "jshint" task.
+    // Load the plugins that provides the tasks.
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jsbeautifier');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jsbeautifier', 'jshint']);
 
 };
