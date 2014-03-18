@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         jsbeautifier: {
-            files: ['package.json', '*.js', 'app/**/*.js', 'config/**/*.js', 'app/**/*.jade'],
+            files: ['package.json', '*.js', 'app/**/*.js', 'config/**/*.js'],
             options: {
                 js: {
                     jslintHappy: true
