@@ -1,4 +1,4 @@
-// set up ======================================================================
+// set up =====================================================================
 // get all the tools we need
 var express = require('express');
 var app = express();
@@ -11,7 +11,7 @@ var env = process.env.NODE_ENV || 'development';
 var config = require('./config/config.js')[env];
 var configDB = require('./config/database.js')[env];
 
-// configuration ===============================================================
+// configuration ==============================================================
 mongoose.connect(configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
@@ -37,8 +37,8 @@ app.configure(function () {
 });
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./app/routes.js')(app, passport);
 
-// launch ======================================================================
+// launch =====================================================================
 app.listen(port);
 console.log('App started on port ' + port);
