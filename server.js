@@ -24,7 +24,8 @@ app.configure(function () {
     app.use(express.cookieParser()); // read cookies (needed for auth)
     app.use(express.bodyParser()); // get information from html forms
 
-    app.set('view engine', 'jade'); // set up ejs for templating
+    app.set('views', config.root + '/app/views');
+    app.set('view engine', 'jade'); // set up jade for templating
 
     // required for passport
     app.use(express.session({
